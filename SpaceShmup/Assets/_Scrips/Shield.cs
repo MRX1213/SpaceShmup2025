@@ -8,7 +8,7 @@ public class Shield : MonoBehaviour
     public float rotationsPerSecond = 0.1f;
 
     [Header("Dynamic")]
-    public int levelShown = 0;
+    public int levelShown = 4;
 
     Material mat; 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class Shield : MonoBehaviour
     void Update()
     {
         // read current shield level from the HEro Singleton
-        int currentLevel = (int)Hero.S.shieldLevel;
+        int currentLevel = Mathf.FloorToInt(Hero.S.shieldLevel);
         if (levelShown != currentLevel)
         {
             levelShown = currentLevel;
